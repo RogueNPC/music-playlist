@@ -27,9 +27,16 @@ class Song:
 
   # TODO: Using the __str___ dunder method, return a string of the song title.
   def __str__(self):
-    self.get_title()
+    return self.get_title()
 
 
   # TODO: Using the __repr__ dunder method, return a string formatted as the following:'Song Title -> Next Song Title'
   def __repr__(self):
-    f'{self.get_title()} -> {self.get_next_song()}'
+    return f'{self.get_title()} -> {self.get_next_song()}'
+
+if __name__ == "__main__":
+    # If you run this file from the terminal
+    # this block is executed.
+    test = Song("Bramble Blast")
+    print(test)
+    
