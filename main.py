@@ -16,12 +16,13 @@ while True:
   3: To remove a song from playlist
   4: To search for song in playlist
   5: Return the length of the playlist
+  0: Exit
   =====================================
 
   ''')
 
   # Prints welcome message and options menu
-  user_selection = int(input('Enter one of the 5 options:  '))
+  user_selection = int(input('Enter one of the 6 options:  '))
 
   # Option 1: View playlist
   if user_selection == 1:
@@ -56,6 +57,9 @@ while True:
   # Option 5: Return the length of the playlist
   elif user_selection == 5:
     print(f"This set list has {playlist.length()} songs.")
+
+  elif user_selection == 0:
+    break
 
   # Message for invalid input
   else:
