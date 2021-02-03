@@ -29,7 +29,7 @@ class Playlist:
     index = 0
 
     # loops until it finds the song (node) or reaches the end of the playlist (linked list)
-    while current_song.get_title() != None:
+    while current_song != None:
       # returns the index if it finds the song
       if current_song.get_title() == title:
         return index
@@ -44,24 +44,25 @@ class Playlist:
 
   def remove_song(self, title):
 
-    # removes node if at the head
-    if self.__first_song.get_title() == title:
-      self.__first_song = self.__first_song.get_next_song()
-      print("song successfully removed.")
-      return
-
     # setting up two pointers (current and previous song)
     previous_song = None
     current_song = self.__first_song
 
+    # function fails if song doesn't exist in the list
+    if current_song == None:
+      print("song does not exist, no song has been removed.")
+      return
+
+    # removes node if at the head
+    elif self.__first_song.get_title() == title:
+      self.__first_song = self.__first_song.get_next_song()
+      print("song successfully removed.")
+      return
+
     # continously moves pointers until reaches specified song or end of the playlist
-    while current_song.get_title() != title:
+    while current_song != None:
       previous_song = current_song
       current_song = current_song.get_next_song()
-      # function fails if song doesn't exist in the list
-      if current_song == None:
-        print("song does not exist, no song has been removed.")
-        return
 
     # song removed
     previous_song.set_next_song(current_song.get_next_song())
