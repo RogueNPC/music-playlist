@@ -50,7 +50,7 @@ class Playlist:
       print("song successfully removed.")
       return
 
-    # setting up two pointers (current and previous node)
+    # setting up two pointers (current and previous song)
     previous_song = None
     current_song = self.__first_song
 
