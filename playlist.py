@@ -61,6 +61,7 @@ class Playlist:
       # function fails if song doesn't exist in the list
       if current_song == None:
         print("song does not exist, no song has been removed.")
+        return
 
     # song removed
     previous_song.set_next_song(current_song.get_next_song())
