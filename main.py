@@ -22,7 +22,7 @@ while True:
   ''')
 
   # Prints welcome message and options menu
-  user_selection = int(input('Enter one of the 6 options:  '))
+  user_selection = input('Enter one of the 6 options:  ')
 
   # Option 1: View playlist
   if user_selection == 1:
