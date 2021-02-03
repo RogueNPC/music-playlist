@@ -72,6 +72,8 @@ class Playlist:
   def length(self):
     current_song = self.__first_song
     counter = 0
+
+    # loop traverses through the playlist (linked list) and increments counter every song (node)
     while current_song != None:
       counter += 1
       current_song = current_song.get_next_song()
@@ -88,6 +90,8 @@ class Playlist:
   def print_songs(self):
     current_song = self.__first_song
     song_num = 1
+
+    # loop traverses through the playlist (linked list) and prints out every song (node)
     while current_song != None:
       print(f'{song_num}. {current_song}')
       current_song = current_song.get_next_song()
