@@ -48,7 +48,7 @@ class Playlist:
     previous_song = None
     current_song = self.__first_song
 
-    # function fails if song doesn't exist in the list
+    # function fails if our list is empty
     if current_song == None:
       print("song does not exist, no song has been removed.")
       return
@@ -63,6 +63,11 @@ class Playlist:
     while current_song != None:
       previous_song = current_song
       current_song = current_song.get_next_song()
+
+    # function fails if song doesn't exist in the list
+    if current_song == None:
+      print("song does not exist, no song has been removed.")
+      return
 
     # song removed
     previous_song.set_next_song(current_song.get_next_song())
