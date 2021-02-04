@@ -19,6 +19,35 @@ class Playlist:
     self.__first_song = new_song
     print("song successfully added.")
 
+  # a method called insert_song that creates a Song object and adds it to the playlist at the specified spot.
+
+  def insert_song(self, title, index):
+
+    # adding at the head
+    if int(index) == 1:
+      self.add_song(title)
+      return
+    # fail case
+    elif int(index) <= 0 or int(index) > self.length() + 1:
+      print("song cannot be inserted at that index, try again.")
+      return
+
+    # Creates a new song (node)
+    new_song = Song(title)
+    new_song.set_title(title)
+
+    # setting up two pointers (current and previous song)
+    previous_song = None
+    current_song = self.__first_song
+
+    # continously moves pointers until reaches specified song
+    for index in range(int(index)-1):
+      previous_song = current_song
+      current_song = current_song.get_next_song()
+
+    previous_song.set_next_song(new_song)
+    new_song.set_next_song(current_song)
+
 
   # a method called find_song that searches for whether a song exits in the playlist and returns its index. The method has one parameters, title, which is the title of the song to be searched for. If the song is found, return its index.
 

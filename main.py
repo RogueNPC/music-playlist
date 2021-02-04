@@ -16,13 +16,14 @@ while True:
   3: To remove a song from playlist
   4: To search for song in playlist
   5: Return the length of the playlist
+  6: To add a new song and add it to a specified spot in the playlist
   0: Exit
   =====================================
 
   ''')
 
   # Prints welcome message and options menu
-  user_selection = int(input('Enter one of the 6 options:  '))
+  user_selection = int(input('Enter one of the 7 options:  '))
 
   # Option 1: View playlist
   if user_selection == 1:
@@ -33,7 +34,6 @@ while True:
   elif user_selection == 2:
     song_title = input('What song do you want to add? ')
     playlist.add_song(song_title)
-
 
 
   # Option 3: To remove a song from playlist
@@ -58,6 +58,15 @@ while True:
   elif user_selection == 5:
     print(f"This set list has {playlist.length()} songs.")
 
+
+  # Option 6: To add a new song and add it to a specified index in playlist
+  elif user_selection == 6:
+    song_title = input('What song do you want to add? ')
+    index = input('Where in the playlist do you want to add it to? ')
+    playlist.insert_song(song_title, index)
+
+
+  # Exit program
   elif user_selection == 0:
     break
 
